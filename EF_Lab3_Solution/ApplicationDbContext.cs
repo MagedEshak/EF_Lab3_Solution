@@ -38,6 +38,18 @@ namespace EF_Lab3_Solution
                .HasForeignKey(s => s.ToSchoolID)
                .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Teacher>().HasKey(t => t.TeacherID);
+            modelBuilder.Entity<Teacher>().Property(t=>t.Name).IsRequired();
+
+            modelBuilder.Entity<Teacher>()
+                .HasAlternateKey(t => new { t.NationalID, t.phone, t.Code });
+
+            modelBuilder.Entity<Department>()
+                .HasIndex(s => s.DepartmentID).IsUnique().IsClustered(false);
+
+            modelBuilder.Entity<School>().HasKey(s => s.SchoolID);
+
+
             //========================== Seeding ====================================
             modelBuilder.Entity<Teacher>().HasData(new Teacher
             {
