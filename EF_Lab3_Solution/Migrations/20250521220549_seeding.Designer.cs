@@ -4,6 +4,7 @@ using EF_Lab3_Solution;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Lab3_Solution.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250521220549_seeding")]
+    partial class seeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,7 +158,7 @@ namespace EF_Lab3_Solution.Migrations
                     b.HasData(
                         new
                         {
-                            TeacherID = 2,
+                            TeacherID = 1,
                             Address = "Assuit",
                             BirthOfDate = new DateTime(2000, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Code = "MMM",

@@ -51,19 +51,21 @@ namespace EF_Lab3_Solution
 
 
             //========================== Seeding ====================================
+            
+            
             modelBuilder.Entity<Teacher>().HasData(new Teacher
             {
-                TeacherID = 1,
-                BirthOfDate = DateTime.Now,
+                TeacherID = 2,
+                BirthOfDate = new DateTime(2000,1,29),
                 Address = "Assuit",
                 Name = "Maged",
                 Code = "MMM",
-                HiringDate = DateTime.Now,
+                HiringDate = new DateTime(2022,7,18),
                 Jop = "Teacher",
                 NationalID = "340005687997",
                 phone = "0123456789",
                 Qualification = "IT",
-                QualificationDate = DateTime.Now,
+                QualificationDate = new DateTime(2020,6,23),
                 Note = "ok",
                 SchoolID = 1
             });

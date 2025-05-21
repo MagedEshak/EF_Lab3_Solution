@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
+        
+            var context = new ApplicationDbContext();
             
+            var selectAllTeachers = context.Teachers.ToList();
+
+            foreach (var item in selectAllTeachers)
+            {
+                Console.WriteLine(item.Name);
+            }
+
         }
     }
 }
