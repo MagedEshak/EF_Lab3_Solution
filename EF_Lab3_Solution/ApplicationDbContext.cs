@@ -18,6 +18,7 @@ namespace EF_Lab3_Solution
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(@"Server=LAPTOP-CMR1M1SF\SQLDEV;Database=EF_DbTest;Trusted_Connection=True;Encrypt=false");
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 
 
